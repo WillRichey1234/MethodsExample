@@ -4,6 +4,10 @@ namespace MethodsExample
 {
 	class MainClass
 	{
+		/// <summary>
+		/// Simple program that reverses the characters in a string using an abstracted Swap method.
+		/// </summary>
+		/// <param name="args">The command-line arguments.</param>
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Enter a phrase");
@@ -17,7 +21,14 @@ namespace MethodsExample
 			{
 				if (chars[i] != chars[j])
 				{
+					// if the two characters are not the same, then this is NOT a palandrome
+					// and so, I need to swap the characters.
 					isPalandrome = false;
+
+					// do the swap!
+					// The 'ref' keyword means pass-by-reference.
+					// This means that changes in the child scope
+					// are kept in the main scope.
 					Swap(ref chars[i], ref chars[j]);
 				}
 			}
